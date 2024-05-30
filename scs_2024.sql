@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-05-2024 a las 22:03:01
+-- Tiempo de generación: 31-05-2024 a las 00:22:55
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -122,7 +122,7 @@ CREATE TABLE `scs_enfermeros` (
   `rol` set('ENFERMERO') NOT NULL,
   `telefono` varchar(20) NOT NULL,
   `ipUltimoAcceso` varchar(20) NOT NULL,
-  `fechaHoraUltimoAcceso` datetime NOT NULL,
+  `fechaHoraUltimoAcceso` datetime DEFAULT NULL,
   `numeroIntentosFallidos` int(11) NOT NULL,
   `bloqueado` tinyint(1) NOT NULL,
   `numeroColegiado` int(11) NOT NULL,
@@ -171,7 +171,7 @@ CREATE TABLE `scs_medicos` (
   `rol` set('MÉDICO') NOT NULL,
   `telefono` varchar(20) NOT NULL,
   `ipUltimoAcceso` varchar(20) NOT NULL,
-  `fechaHoraUltimoAcceso` datetime NOT NULL,
+  `fechaHoraUltimoAcceso` datetime DEFAULT NULL,
   `numeroIntentosFallidos` int(11) NOT NULL,
   `bloqueado` tinyint(1) NOT NULL,
   `tokenPasswordOlvidada` varchar(255) NOT NULL,
@@ -194,7 +194,7 @@ INSERT INTO `scs_medicos` (`id`, `nombre`, `apellido1`, `apellido2`, `email`, `p
 (42, 'Julia', 'Flores', 'Núñez', 'julia.f@scs.es', 'password123', 'MÉDICO', '+34600123481', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'MEDICINA FAMILIAR', 3006, 1, 3),
 (43, 'Hugo', 'Iglesias', 'Romero', 'hugo.i@scs.es', 'password123', 'MÉDICO', '+34600123482', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'PEDIATRÍA', 3007, 1, 5),
 (44, 'Alicia', 'Castro', 'Lara', 'alicia.c@scs.es', 'password123', 'MÉDICO', '+34600123483', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'UROLOGÍA', 3008, 1, 3),
-(45, 'Fernando', 'Blanco', 'Gil', 'fernando.b@scs.es', '$2y$10$iHqNT89H6il9ffhC4pYBcemY8Spegqh4V2RIFbZw.dHCBzMvDieOG', 'MÉDICO', '+34600123484', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'MEDICINA FAMILIAR', 3009, 1, 0),
+(45, 'Fernando', 'Blanco', 'Perez', 'fernando.b@scs.es', '$2y$10$YpGLE7Kxg8NA.XRTaX.aiOamP52PS/0VvR.ilBJFsG5e9uHWOU7Fy', 'MÉDICO', '+34600123484', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'PEDIATRÍA', 3009, 2, 1),
 (46, 'Isabel', 'Lorenzo', 'Pascual', 'isabel.l@scs.es', 'password123', 'MÉDICO', '+34600123485', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'TRAUMATOLOGÍA', 3010, 1, 5),
 (47, 'Raúl', 'Cabrera', 'Serrano', 'raul.c@scs.es', 'password123', 'MÉDICO', '+34600123486', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'MEDICINA FAMILIAR', 3011, 2, 3),
 (48, 'Teresa', 'Reyes', 'Molina', 'teresa.r@scs.es', 'password123', 'MÉDICO', '+34600123487', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'PEDIATRÍA', 3012, 2, 5),
@@ -205,7 +205,8 @@ INSERT INTO `scs_medicos` (`id`, `nombre`, `apellido1`, `apellido2`, `email`, `p
 (53, 'Álvaro', 'Cruz', 'Paredes', 'alvaro.c@scs.es', 'password123', 'MÉDICO', '+34600123492', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'PEDIATRÍA', 3017, 1, 6),
 (54, 'Silvia', 'Sanz', 'Miranda', 'silvia.s@scs.es', 'password123', 'MÉDICO', '+34600123493', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'UROLOGÍA', 3018, 1, 2),
 (55, 'Eduardo', 'Nieto', 'Calvo', 'eduardo.n@scs.es', 'password123', 'MÉDICO', '+34600123494', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'GINECOLOGÍA', 3019, 1, 2),
-(56, 'Inés', 'Pardo', 'Ortega', 'ines.p@scs.es', 'password123', 'MÉDICO', '+34600123495', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'TRAUMATOLOGÍA', 3020, 1, 4);
+(56, 'Inés', 'Pardo', 'Ortega', 'ines.p@scs.es', 'password123', 'MÉDICO', '+34600123495', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'TRAUMATOLOGÍA', 3020, 1, 4),
+(57, 'Elian', 'De Valois', 'Revuelta', 'devalois.e@scs.es', '$2y$10$SwFEXeFfzwbSBsfnxnHLrezmA1c9UAQ.yd592dxOfpxz.8SHg7dii', 'MÉDICO', '+34675489280', '', NULL, 0, 0, '', 'MEDICINA FAMILIAR', 3211, 12, 6);
 
 -- --------------------------------------------------------
 
@@ -223,7 +224,7 @@ CREATE TABLE `scs_pacientes` (
   `rol` set('PACIENTE') NOT NULL,
   `telefono` varchar(20) NOT NULL,
   `ipUltimoAcceso` varchar(20) NOT NULL,
-  `fechaHoraUltimoAcceso` datetime NOT NULL,
+  `fechaHoraUltimoAcceso` datetime DEFAULT NULL,
   `numeroIntentosFallidos` int(11) NOT NULL,
   `bloqueado` tinyint(1) NOT NULL,
   `cip` varchar(100) NOT NULL,
@@ -336,7 +337,7 @@ ALTER TABLE `scs_enfermeros`
 -- AUTO_INCREMENT de la tabla `scs_medicos`
 --
 ALTER TABLE `scs_medicos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT de la tabla `scs_pacientes`
