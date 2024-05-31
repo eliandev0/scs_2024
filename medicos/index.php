@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__."/../api/comprobarLogIn.php";
 require_once __DIR__."/../config/config.global.php";
-//require_once __DIR__."/../class/class.Medico.php";
+//require_once __DIR__."/../class/class.Administrador.php";
 
 global $CONFIG_GLOBAL, $sesion;
 
@@ -36,18 +36,18 @@ include(__DIR__.'/../menu/menu.php');
 
 <input id="idMedico" type="hidden" value="0">
 
-<div class="container mt-2">
+<div class="container mt-4">
     <div class="row">
         <div class="col-12">
 			<div class="row">
-				<div class="col-12 text-center">
-					<button onclick="abrirModalFichaMedico(this, 0)" class="btn btn-success"><i class="fa-solid fa-user-plus"></i> Añadir Medico</button>
+				<div class="col-12 text-left">
+					<button onclick="abrirModalFichaMedico(this, 0)" class="btn btn-success"><i class="fa-solid fa-user-plus"></i> Añadir Médico</button>
 				</div>
 			</div>
             <!-- Tabla listado médicos -->			
             <div class="row">
                 <div class="col-12">
-                    <table class="tablaListado table-striped" id="tablaListadoMedico" data-toggle="table"
+                    <table class="tablaListado table-striped" id="tablaListadoMedicos" data-toggle="table"
                            data-url="<?php echo $CONFIG_GLOBAL['rutaURLBase']."/medicos/GetJSONTablaMedicos.php"; ?>"
                            data-unique-id="id"
                            data-search="true"
@@ -69,7 +69,6 @@ include(__DIR__.'/../menu/menu.php');
                             <th data-width="20" data-field="telefono">Teléfono</th>
                             <th data-width="20" data-field="email">Email</th>
                             <th data-width="20" data-field="especialidad" data-sortable="true">Especialidad</th>
-                            <th data-width="20" data-field="ambulatorio" data-sortable="true">Ambulatorio</th>
                             <th data-width="53" data-field="acciones">Acciones</th>
                         </tr>
                         </thead>
