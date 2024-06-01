@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-05-2024 a las 18:28:28
+-- Tiempo de generación: 01-06-2024 a las 11:55:13
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -49,8 +49,9 @@ CREATE TABLE `scs_administradores` (
 --
 
 INSERT INTO `scs_administradores` (`id`, `nombre`, `apellido1`, `apellido2`, `email`, `password`, `rol`, `telefono`, `ipUltimoAcceso`, `fechaHoraUltimoAcceso`, `numeroIntentosFallidos`, `tokenPasswordOlvidada`, `bloqueado`, `areaTrabajo`) VALUES
-(67, 'Root', 'Root', 'Root', 'root@scs.es', '$2y$10$I0mU39fEJ0roN0hpQV1lfuE3BQ2MzXm5I0HY40.R4lZJ3F3IHl6Da', 'ADMINISTRADOR', '+34600202020', '::1', '2024-05-31 18:21:18', 0, NULL, 0, 'Administración de Sistemas'),
-(73, 'Elian', 'De Valois', 'Revuelta', 'elian.d@scs.es', '$2y$10$S/ArqxVs57H9IkFcpeJkIuz00DU6fFAa7S4YocZNitYpSS0ShOqS6', 'ADMINISTRADOR', '+34600202020', '::1', '2024-05-31 18:22:23', 0, NULL, 0, 'Administración de Sistemas');
+(67, 'Root', 'Root', 'Root', 'root@scs.es', '$2y$10$I0mU39fEJ0roN0hpQV1lfuE3BQ2MzXm5I0HY40.R4lZJ3F3IHl6Da', 'ADMINISTRADOR', '+34600202020', '', '2024-05-31 20:47:19', 0, NULL, 0, 'Administración de Sistemas'),
+(73, 'Elian', 'De Valois', 'Revuelta', 'elian.d@scs.es', '$2y$10$S/ArqxVs57H9IkFcpeJkIuz00DU6fFAa7S4YocZNitYpSS0ShOqS6', 'ADMINISTRADOR', '+34600202020', '', '2024-05-31 20:47:58', 0, NULL, 0, 'Administración de Sistemas'),
+(95, 'Pepe', 'Sanchez', 'Tamaimo', 'pepe.s@scs.es', '$2y$10$j9O6yzygwR.ysl8QdPCLpe5wGYt3REJB9B7vluKX.qrIwlEs1qoJC', 'ADMINISTRADOR', '+34666666666', '', NULL, 0, '', 0, 'Administración de Sistemas');
 
 -- --------------------------------------------------------
 
@@ -196,7 +197,7 @@ INSERT INTO `scs_medicos` (`id`, `nombre`, `apellido1`, `apellido2`, `email`, `p
 (42, 'Julia', 'Flores', 'Núñez', 'julia.f@scs.es', 'password123', 'MÉDICO', '+34600123481', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'MEDICINA FAMILIAR', 3006, 1, 3),
 (43, 'Hugo', 'Iglesias', 'Romero', 'hugo.i@scs.es', 'password123', 'MÉDICO', '+34600123482', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'PEDIATRÍA', 3007, 1, 5),
 (44, 'Alicia', 'Castro', 'Lara', 'alicia.c@scs.es', 'password123', 'MÉDICO', '+34600123483', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'UROLOGÍA', 3008, 1, 3),
-(45, 'Fernando', 'Blanco', 'Perez', 'fernando.b@scs.es', '$2y$10$YpGLE7Kxg8NA.XRTaX.aiOamP52PS/0VvR.ilBJFsG5e9uHWOU7Fy', 'MÉDICO', '+34600123484', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'PEDIATRÍA', 3009, 2, 1),
+(45, 'Fernando', 'Blanco', 'Perez', 'fernando.b@scs.es', '$2y$10$49lx3mQUY9Yhcru2EEwTouiMZcfT4LA2Aq9h5IQu5D1oftZJfxL5W', 'MÉDICO', '+34600123484', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'GINECOLOGÍA', 3009, 2, 0),
 (46, 'Isabel', 'Lorenzo', 'Pascual', 'isabel.l@scs.es', 'password123', 'MÉDICO', '+34600123485', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'TRAUMATOLOGÍA', 3010, 1, 5),
 (47, 'Raúl', 'Cabrera', 'Serrano', 'raul.c@scs.es', 'password123', 'MÉDICO', '+34600123486', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'MEDICINA FAMILIAR', 3011, 2, 3),
 (48, 'Teresa', 'Reyes', 'Molina', 'teresa.r@scs.es', 'password123', 'MÉDICO', '+34600123487', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'PEDIATRÍA', 3012, 2, 5),
@@ -208,7 +209,28 @@ INSERT INTO `scs_medicos` (`id`, `nombre`, `apellido1`, `apellido2`, `email`, `p
 (54, 'Silvia', 'Sanz', 'Miranda', 'silvia.s@scs.es', 'password123', 'MÉDICO', '+34600123493', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'UROLOGÍA', 3018, 1, 2),
 (55, 'Eduardo', 'Nieto', 'Calvo', 'eduardo.n@scs.es', 'password123', 'MÉDICO', '+34600123494', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'GINECOLOGÍA', 3019, 1, 2),
 (56, 'Inés', 'Pardo', 'Ortega', 'ines.p@scs.es', 'password123', 'MÉDICO', '+34600123495', '192.168.1.1', '2024-05-25 12:41:37', 0, 0, '', 'TRAUMATOLOGÍA', 3020, 1, 4),
-(57, 'Elian', 'De Valois', 'Revuelta', 'devalois.e@scs.es', '$2y$10$SwFEXeFfzwbSBsfnxnHLrezmA1c9UAQ.yd592dxOfpxz.8SHg7dii', 'MÉDICO', '+34675489280', '', NULL, 0, 0, '', 'MEDICINA FAMILIAR', 3211, 12, 6);
+(58, 'Tomate', 'La Parra', 'Herrera', 'tomate.l@scs.es', '$2y$10$XRT.pmZcmLetAfMrMqRw9ertFrCZCNo3IGM/ucDSIQSyGR3DZrQWe', 'MÉDICO', '+34698556325', '', NULL, 0, 0, NULL, 'TRAUMATOLOGÍA', 1234, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `scs_mensajes`
+--
+
+CREATE TABLE `scs_mensajes` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `idUsuario` int(10) UNSIGNED NOT NULL,
+  `fechaCreacion` datetime NOT NULL,
+  `enviarYa` tinyint(1) NOT NULL,
+  `enviado` tinyint(1) NOT NULL,
+  `fechaEnvio` datetime NOT NULL,
+  `erroresEnvio` tinyint(1) NOT NULL,
+  `textoErroresEnvio` text NOT NULL,
+  `responderA` varchar(255) NOT NULL,
+  `asuntoMensaje` varchar(255) NOT NULL,
+  `textoMensaje` text NOT NULL,
+  `emailDestinatarios` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`emailDestinatarios`))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -316,7 +338,7 @@ ALTER TABLE `scs_pacientes`
 -- AUTO_INCREMENT de la tabla `scs_administradores`
 --
 ALTER TABLE `scs_administradores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
 -- AUTO_INCREMENT de la tabla `scs_ambulatorios`
@@ -340,7 +362,7 @@ ALTER TABLE `scs_enfermeros`
 -- AUTO_INCREMENT de la tabla `scs_medicos`
 --
 ALTER TABLE `scs_medicos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de la tabla `scs_pacientes`
