@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-06-2024 a las 11:55:13
+-- Tiempo de generación: 01-06-2024 a las 11:57:17
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -321,6 +321,12 @@ ALTER TABLE `scs_enfermeros`
 ALTER TABLE `scs_medicos`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Indices de la tabla `scs_mensajes`
+--
+ALTER TABLE `scs_mensajes`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `scs_pacientes`
